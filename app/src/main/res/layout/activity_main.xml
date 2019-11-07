@@ -68,15 +68,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:onClick="sendBtnClicked"
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
         android:layout_marginBottom="16dp"
+        android:onClick="sendBtnClicked"
         android:text="OK !"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/toRevBtn"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -173,6 +176,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/critik"
         app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:onClick="seeReviews"
+        android:id="@+id/toRevBtn"
+        android:layout_width="54dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        android:layout_marginBottom="16dp"
+        android:foreground="@android:drawable/ic_dialog_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sendButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

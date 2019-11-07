@@ -3,6 +3,7 @@ package com.example.cinenigma;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Intent toReviews;
     private SQLiteDatabase dbCritiques ;
     private Critiques dbHelper ;
     private EditText mTitle;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         mCritique  = (EditText) findViewById(R.id.movieCritique);
         dbHelper = new Critiques(this);
         dbCritiques = dbHelper.getReadableDatabase();
+         toReviews = new Intent(this, ListOfReviews.class);
+
 
     }
     private void addValuesToDb(String title, String date, String time, Integer nS, Integer nR, Integer nM, String critique) {
@@ -55,5 +58,8 @@ public class MainActivity extends AppCompatActivity {
     addValuesToDb(mTitle.getText().toString(),mDate.getText().toString(),mTime.getText().toString(),
             Integer.parseInt(mNoteScenar.getText().toString()), Integer.parseInt(mNoteReal.getText().toString()),Integer.parseInt(mNoteMusique.getText().toString()),
             mCritique.getText().toString());
+    }
+    public void seeReviews(View view) {
+        startActivity(toReviews);
     }
 }
